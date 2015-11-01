@@ -23,6 +23,10 @@ body a {
 	color: #4CA0E7;
 }
 
+body {
+	background: #EFEFEF !important;
+}
+
 #sidebar .tab-pane li a:hover, #sidebar .tab-pane li a:focus {
 	background: #A2C7DA !important;
 }
@@ -63,6 +67,7 @@ body .apidocs .item, body .apidocs .constructor .item {
 	border: 1px solid #efefef;
 	padding: 15px 20px;
 	margin: 0;
+	background: #FFFFFF;
 }
 body .apidocs .item:last-child, body .apidocs .constructor .item:last-child {
 	border-radius: 0 0 3px 3px;
@@ -152,4 +157,24 @@ body .apidocs .item:first-child:last-child, body .apidocs .constructor .item:fir
 
 .params-list li:last-child {
 	margin-bottom: 0 !important;
+}
+
+/* Other */
+input.search-query {
+	border-radius: 0px !important;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner, .navbar .brand {
+	background: #800000 !important;
+	text-shadow: 1px 1px 1px #000000 !important;
+	color: #FFFFFF !important;
+}
+
+.navbar-text {
+	color: #FFFFFF !important;
+}
+
+.navbar .divider-vertical {
+	border-left: none !important;
+	border-right: 1px solid #713838 !important;
 }

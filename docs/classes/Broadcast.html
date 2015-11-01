@@ -2,7 +2,7 @@
 <html lang="de">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Restart - Knuddels Boilerplate App</title>
+		<title>Broadcast - Knuddels Boilerplate App</title>
 		<link rel="stylesheet" href="" />
 		<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css" />
 		<link rel="stylesheet" href="../assets/css/main.css" id="site_styles" />
@@ -80,17 +80,17 @@
 						<div id="docs-main">
 							<div class="content">
 								<div class="page-header">
-								    <h1>Restart</h1>
+								    <h1>Broadcast</h1>
 								</div>
 								
 								
 								
 								
-								        <p>Verfügbar seit 0.0.1</p>
+								        <p>Verfügbar seit 0.0.2</p>
 								
 								
 								<div class="yuidoc-class-description">
-								<p>Repräsentiert Methoden um die App über Chatbefehle neuzustarten</p>
+								<p>Repräsentiert den Chatbefehl <code>/system broadcast:[Subject§][Message]</code></p>
 								<p>Weitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.</p>
 								
 								</div>
@@ -102,8 +102,7 @@
 										<li>
 											<strong>Methoden</strong>
 											<ul>
-												<li><a href="#method-handle"><span class="im">handle</span>(<span class="ia">user</span><span class="ia">seconds</span><span class="ia">broadcast</span>)</a></li>
-												<li><a href="#method-reboot"><span class="im">reboot</span>()</a></li>
+												<li><a href="#method-send"><span class="im">send</span>(<span class="ia">user</span><span class="ia">message</span>)</a></li>
 												<li><a href="#method-toJSON"><span class="im">toJSON</span>()</a></li>
 												<li><a href="#method-toString"><span class="im">toString</span>()</a></li>
 											</ul>
@@ -120,9 +119,9 @@
 								    <div id="methods" class="page-section">
 								        <h2 class="off-left">Methoden</h2>
 								        <div class="item-list">
-								            <div id="method-handle" class="method item">
+								            <div id="method-send" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>handle</code></span>
+								            	<span class="name"><code>send</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
@@ -130,10 +129,7 @@
 								            						<code>user</code>
 								            				</li>
 								            				<li class="arg">
-								            						<code>seconds</code>
-								            				</li>
-								            				<li class="arg">
-								            						<code>broadcast</code>
+								            						<code>message</code>
 								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
@@ -150,11 +146,11 @@
 								            
 								            
 								            
-								            			<p>Available since 0.0.1</p>
+								            			<p>Available since 0.0.2</p>
 								            	</div>
 								            
-								            	<div class="description"><p>Startet die App neu</p>
-								            <p><strong>Befehl:</strong> <code>/system (+)restart[:Time]</code></p>
+								            	<div class="description"><p>Sendet eine Rundmail an alle Channelmoderatoren, AppManager und Channelbesitzer</p>
+								            <p><strong>Befehl:</strong> <code>/system broadcast:[Subject§][Message]</code></p>
 								            </div>
 								            
 								            		<div class="params">
@@ -166,52 +162,21 @@
 								            						<span class="type">User</span>
 								            
 								            
+								            					<div class="param-description"><p>Benutzer-Objekt</p>
+								            </div>
 								            
 								            				</li>
 								            				<li class="param">
-								            						<code class="param-name">seconds</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+								            						<code class="param-name">message</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 								            
 								            
-								            
-								            				</li>
-								            				<li class="param">
-								            						<code class="param-name">broadcast</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-								            
-								            
+								            					<div class="param-description"><p>Nachricht</p>
+								            </div>
 								            
 								            				</li>
 								            			</ul>
 								            		</div>
-								            
-								            
-								            </div>
-								            <div id="method-reboot" class="method item private">
-								            	<div class="method-signature">
-								            	<span class="name"><code>reboot</code></span>
-								            
-								            		<span class="paren">()</span>
-								            	</div>
-								            
-								            
-								            		<span class="flag private">private</span>
-								            
-								            
-								            
-								            
-								            	<div class="meta">
-								            				<p>
-								            		</p>
-								            
-								            
-								            
-								            			<p>Available since 0.0.1</p>
-								            	</div>
-								            
-								            	<div class="description"><p>Weist der <code>RootInstance</code> der App an, diese zu updaten</p>
-								            </div>
-								            
 								            
 								            
 								            </div>

@@ -2,7 +2,7 @@
     "project": {
         "name": "Knuddels Boilerplate App",
         "description": "Die Dokumentation zum Boilerplate Code",
-        "version": "0.0.1",
+        "version": "0.0.3",
         "url": "http://www.knuddels.de/",
         "logo": "assets/img/logo.png"
     },
@@ -12,6 +12,24 @@
             "modules": {},
             "classes": {
                 "Exception": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\commands\\system\\AppBot.js": {
+            "name": "..\\commands\\system\\AppBot.js",
+            "modules": {},
+            "classes": {
+                "AppBot": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\commands\\system\\Broadcast.js": {
+            "name": "..\\commands\\system\\Broadcast.js",
+            "modules": {},
+            "classes": {
+                "Broadcast": 1
             },
             "fors": {},
             "namespaces": {}
@@ -80,6 +98,34 @@
                 "\n\t\ttry {\n\t\t\tthrow new Exception('Hallo Welt!');\n\t\t} catch(e) {\n\t\t\tLogger.warn(e);\n\t\t}"
             ]
         },
+        "AppBot": {
+            "name": "AppBot",
+            "shortname": "AppBot",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\commands\\system\\AppBot.js",
+            "line": 25,
+            "description": "Repräsentiert diverse Funktionen um mit den AppBot zu inteagieren.\n\nWeitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.3"
+        },
+        "Broadcast": {
+            "name": "Broadcast",
+            "shortname": "Broadcast",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\commands\\system\\Broadcast.js",
+            "line": 25,
+            "description": "Repräsentiert den Chatbefehl `/system broadcast:[Subject§][Message]`\n\nWeitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.2"
+        },
         "Execute": {
             "name": "Execute",
             "shortname": "Execute",
@@ -145,6 +191,148 @@
             "line": 1,
             "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
             "class": "Exception"
+        },
+        {
+            "file": "..\\commands\\system\\AppBot.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "AppBot"
+        },
+        {
+            "file": "..\\commands\\system\\AppBot.js",
+            "line": 37,
+            "description": "Führt einen angegebenen Befehl aus. Achtung, Privatgespräche werden weitergeleitet, die mit `start` oder `stop` aktiviert/deaktiviert können.\n\n**Befehl:** `/bot say:[Message]`\n\n            `/bot psay:[Nickname]:[Message]`\n\n            `/bot stop`\n\n            `/bot start`",
+            "itemtype": "method",
+            "name": "handle",
+            "since": "0.0.3",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Benutzer-Objekt",
+                    "type": "User"
+                },
+                {
+                    "name": "params",
+                    "description": "Weitere Befehlsinformationen",
+                    "type": "String"
+                }
+            ],
+            "class": "AppBot"
+        },
+        {
+            "file": "..\\commands\\system\\AppBot.js",
+            "line": 106,
+            "description": "Die Nachrichten, die weitergeleitet werden sollen",
+            "itemtype": "method",
+            "name": "onMessage",
+            "since": "0.0.3",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Nachricht",
+                    "type": "String"
+                },
+                {
+                    "name": "private",
+                    "description": "Privatgespräch (ja|nein)",
+                    "type": "Boolean"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "AppBot"
+        },
+        {
+            "file": "..\\commands\\system\\AppBot.js",
+            "line": 131,
+            "description": "Ersetzt eine Nachricht (zum Beispiel mit Mentor-Smileys)",
+            "itemtype": "method",
+            "name": "parseMessage",
+            "since": "0.0.3",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Nachricht",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "AppBot"
+        },
+        {
+            "file": "..\\commands\\system\\AppBot.js",
+            "line": 168,
+            "description": "Zahlt einen Betrag an dem Nutzer aus (Systemabbuchung!)",
+            "itemtype": "method",
+            "name": "payout",
+            "since": "0.0.3",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Benutzer-Objekt",
+                    "type": "User"
+                },
+                {
+                    "name": "params",
+                    "description": "Anzahl der Knuddel",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "AppBot"
+        },
+        {
+            "file": "..\\commands\\system\\Broadcast.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "Broadcast"
+        },
+        {
+            "file": "..\\commands\\system\\Broadcast.js",
+            "line": 35,
+            "description": "Sendet eine Rundmail an alle Channelmoderatoren, AppManager und Channelbesitzer\n\n**Befehl:** `/system broadcast:[Subject§][Message]`",
+            "itemtype": "method",
+            "name": "send",
+            "since": "0.0.2",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Benutzer-Objekt",
+                    "type": "User"
+                },
+                {
+                    "name": "message",
+                    "description": "Nachricht",
+                    "type": "String"
+                }
+            ],
+            "class": "Broadcast"
+        },
+        {
+            "file": "..\\commands\\system\\Broadcast.js",
+            "line": 89,
+            "itemtype": "method",
+            "name": "toJSON",
+            "return": {
+                "description": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Broadcast"
+        },
+        {
+            "file": "..\\commands\\system\\Broadcast.js",
+            "line": 98,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Broadcast"
         },
         {
             "file": "..\\commands\\system\\Execute.js",
@@ -360,7 +548,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 47,
+            "line": 49,
             "description": "Liefert den AppName aus der `app.config`",
             "itemtype": "method",
             "name": "getName",
@@ -372,7 +560,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 57,
+            "line": 59,
             "description": "Liefert eine Instanz",
             "itemtype": "method",
             "name": "get",
@@ -391,7 +579,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 72,
+            "line": 74,
             "description": "Führt JavaScript-Code in einem speziellen Context aus",
             "itemtype": "method",
             "name": "exec",
@@ -417,7 +605,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 87,
+            "line": 89,
             "description": "Erstellt eine Instanz anhand des Namens und bindet diese an der App",
             "itemtype": "method",
             "name": "createInstance",
@@ -434,7 +622,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 106,
+            "line": 108,
             "description": "Diese Methode wird aufgerufen, wenn die App gestartet wird",
             "itemtype": "method",
             "name": "onAppStart",
@@ -442,7 +630,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 132,
+            "line": 134,
             "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den Channel betritt",
             "itemtype": "method",
             "name": "onUserJoined",
@@ -457,7 +645,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 146,
+            "line": 148,
             "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den Channel verlässt",
             "itemtype": "method",
             "name": "onUserLeft",
@@ -472,7 +660,22 @@
         },
         {
             "file": "..\\main.js",
-            "line": 160,
+            "line": 162,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den AppBot privat anschreibt",
+            "itemtype": "method",
+            "name": "onPrivateMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Das Nachrichten-Objekt",
+                    "type": "PrivateMessage"
+                }
+            ],
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 176,
             "description": "Alle registrierten Chatbefehle der App",
             "itemtype": "property",
             "name": "chatCommands",
@@ -481,7 +684,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 219,
+            "line": 244,
             "itemtype": "method",
             "name": "toJSON",
             "return": {
@@ -493,7 +696,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 228,
+            "line": 253,
             "itemtype": "method",
             "name": "toString",
             "return": {
@@ -508,6 +711,14 @@
         {
             "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
             "line": " ..\\classes\\Exception.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\commands\\system\\AppBot.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\commands\\system\\Broadcast.js:1"
         },
         {
             "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",

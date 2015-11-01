@@ -2,7 +2,7 @@
 <html lang="de">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Restart - Knuddels Boilerplate App</title>
+		<title>AppBot - Knuddels Boilerplate App</title>
 		<link rel="stylesheet" href="" />
 		<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css" />
 		<link rel="stylesheet" href="../assets/css/main.css" id="site_styles" />
@@ -80,17 +80,17 @@
 						<div id="docs-main">
 							<div class="content">
 								<div class="page-header">
-								    <h1>Restart</h1>
+								    <h1>AppBot</h1>
 								</div>
 								
 								
 								
 								
-								        <p>Verfügbar seit 0.0.1</p>
+								        <p>Verfügbar seit 0.0.3</p>
 								
 								
 								<div class="yuidoc-class-description">
-								<p>Repräsentiert Methoden um die App über Chatbefehle neuzustarten</p>
+								<p>Repräsentiert diverse Funktionen um mit den AppBot zu inteagieren.</p>
 								<p>Weitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.</p>
 								
 								</div>
@@ -102,10 +102,10 @@
 										<li>
 											<strong>Methoden</strong>
 											<ul>
-												<li><a href="#method-handle"><span class="im">handle</span>(<span class="ia">user</span><span class="ia">seconds</span><span class="ia">broadcast</span>)</a></li>
-												<li><a href="#method-reboot"><span class="im">reboot</span>()</a></li>
-												<li><a href="#method-toJSON"><span class="im">toJSON</span>()</a></li>
-												<li><a href="#method-toString"><span class="im">toString</span>()</a></li>
+												<li><a href="#method-handle"><span class="im">handle</span>(<span class="ia">user</span><span class="ia">params</span>)</a></li>
+												<li><a href="#method-onMessage"><span class="im">onMessage</span>(<span class="ia">message</span><span class="ia">private</span>)</a></li>
+												<li><a href="#method-parseMessage"><span class="im">parseMessage</span>(<span class="ia">message</span>)</a></li>
+												<li><a href="#method-payout"><span class="im">payout</span>(<span class="ia">user</span><span class="ia">params</span>)</a></li>
 											</ul>
 										</li>
 								
@@ -130,10 +130,7 @@
 								            						<code>user</code>
 								            				</li>
 								            				<li class="arg">
-								            						<code>seconds</code>
-								            				</li>
-								            				<li class="arg">
-								            						<code>broadcast</code>
+								            						<code>params</code>
 								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
@@ -150,11 +147,16 @@
 								            
 								            
 								            
-								            			<p>Available since 0.0.1</p>
+								            			<p>Available since 0.0.3</p>
 								            	</div>
 								            
-								            	<div class="description"><p>Startet die App neu</p>
-								            <p><strong>Befehl:</strong> <code>/system (+)restart[:Time]</code></p>
+								            	<div class="description"><p>Führt einen angegebenen Befehl aus. Achtung, Privatgespräche werden weitergeleitet, die mit <code>start</code> oder <code>stop</code> aktiviert/deaktiviert können.</p>
+								            <p><strong>Befehl:</strong> <code>/bot say:[Message]</code></p>
+								            <pre class="code prettyprint"><code>        <code>&#x2F;bot psay:[Nickname]:[Message]</code>
+								            
+								                    <code>&#x2F;bot stop</code>
+								            
+								                    <code>&#x2F;bot start</code></code></pre>
 								            </div>
 								            
 								            		<div class="params">
@@ -166,20 +168,17 @@
 								            						<span class="type">User</span>
 								            
 								            
+								            					<div class="param-description"><p>Benutzer-Objekt</p>
+								            </div>
 								            
 								            				</li>
 								            				<li class="param">
-								            						<code class="param-name">seconds</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+								            						<code class="param-name">params</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 								            
 								            
-								            
-								            				</li>
-								            				<li class="param">
-								            						<code class="param-name">broadcast</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-								            
-								            
+								            					<div class="param-description"><p>Weitere Befehlsinformationen</p>
+								            </div>
 								            
 								            				</li>
 								            			</ul>
@@ -187,11 +186,20 @@
 								            
 								            
 								            </div>
-								            <div id="method-reboot" class="method item private">
+								            <div id="method-onMessage" class="method item private">
 								            	<div class="method-signature">
-								            	<span class="name"><code>reboot</code></span>
+								            	<span class="name"><code>onMessage</code></span>
 								            
-								            		<span class="paren">()</span>
+								            		<div class="args">
+								            			<span class="paren">(</span><ul class="args-list inline commas">
+								            				<li class="arg">
+								            						<code>message</code>
+								            				</li>
+								            				<li class="arg">
+								            						<code>private</code>
+								            				</li>
+								            			</ul><span class="paren">)</span>
+								            		</div>
 								            	</div>
 								            
 								            
@@ -206,59 +214,50 @@
 								            
 								            
 								            
-								            			<p>Available since 0.0.1</p>
+								            			<p>Available since 0.0.3</p>
 								            	</div>
 								            
-								            	<div class="description"><p>Weist der <code>RootInstance</code> der App an, diese zu updaten</p>
+								            	<div class="description"><p>Die Nachrichten, die weitergeleitet werden sollen</p>
 								            </div>
 								            
+								            		<div class="params">
+								            			<h4>Parameters:</h4>
+								            
+								            			<ul class="params-list">
+								            				<li class="param">
+								            						<code class="param-name">message</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 								            
 								            
+								            					<div class="param-description"><p>Nachricht</p>
 								            </div>
-								            <div id="method-toJSON" class="method item private">
-								            	<div class="method-signature">
-								            	<span class="name"><code>toJSON</code></span>
 								            
-								            		<span class="paren">()</span>
-								            		<span class="returns-inline">
-								            			<span class="type"></span>
-								            		</span>
-								            	</div>
+								            				</li>
+								            				<li class="param">
+								            						<code class="param-name">private</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
 								            
 								            
-								            		<span class="flag private">private</span>
+								            					<div class="param-description"><p>Privatgespräch (ja|nein)</p>
+								            </div>
 								            
-								            
-								            
-								            
-								            	<div class="meta">
-								            				<p>
-								            		</p>
-								            
-								            
-								            
-								            	</div>
-								            
-								            
-								            
-								            		<div class="returns">
-								            			<h4>Returns:</h4>
-								            
-								            			<div class="returns-description">
-								            					<p>Object</p>
-								            
-								            			</div>
+								            				</li>
+								            			</ul>
 								            		</div>
 								            
-								            </div>
-								            <div id="method-toString" class="method item private">
-								            	<div class="method-signature">
-								            	<span class="name"><code>toString</code></span>
 								            
-								            		<span class="paren">()</span>
-								            		<span class="returns-inline">
-								            			<span class="type"></span>
-								            		</span>
+								            </div>
+								            <div id="method-parseMessage" class="method item private">
+								            	<div class="method-signature">
+								            	<span class="name"><code>parseMessage</code></span>
+								            
+								            		<div class="args">
+								            			<span class="paren">(</span><ul class="args-list inline commas">
+								            				<li class="arg">
+								            						<code>message</code>
+								            				</li>
+								            			</ul><span class="paren">)</span>
+								            		</div>
 								            	</div>
 								            
 								            
@@ -273,18 +272,89 @@
 								            
 								            
 								            
+								            			<p>Available since 0.0.3</p>
+								            	</div>
+								            
+								            	<div class="description"><p>Ersetzt eine Nachricht (zum Beispiel mit Mentor-Smileys)</p>
+								            </div>
+								            
+								            		<div class="params">
+								            			<h4>Parameters:</h4>
+								            
+								            			<ul class="params-list">
+								            				<li class="param">
+								            						<code class="param-name">message</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+								            
+								            
+								            					<div class="param-description"><p>Nachricht</p>
+								            </div>
+								            
+								            				</li>
+								            			</ul>
+								            		</div>
+								            
+								            
+								            </div>
+								            <div id="method-payout" class="method item private">
+								            	<div class="method-signature">
+								            	<span class="name"><code>payout</code></span>
+								            
+								            		<div class="args">
+								            			<span class="paren">(</span><ul class="args-list inline commas">
+								            				<li class="arg">
+								            						<code>user</code>
+								            				</li>
+								            				<li class="arg">
+								            						<code>params</code>
+								            				</li>
+								            			</ul><span class="paren">)</span>
+								            		</div>
 								            	</div>
 								            
 								            
+								            		<span class="flag private">private</span>
 								            
-								            		<div class="returns">
-								            			<h4>Returns:</h4>
 								            
-								            			<div class="returns-description">
-								            					<p>String</p>
 								            
-								            			</div>
+								            
+								            	<div class="meta">
+								            				<p>
+								            		</p>
+								            
+								            
+								            
+								            			<p>Available since 0.0.3</p>
+								            	</div>
+								            
+								            	<div class="description"><p>Zahlt einen Betrag an dem Nutzer aus (Systemabbuchung!)</p>
+								            </div>
+								            
+								            		<div class="params">
+								            			<h4>Parameters:</h4>
+								            
+								            			<ul class="params-list">
+								            				<li class="param">
+								            						<code class="param-name">user</code>
+								            						<span class="type">User</span>
+								            
+								            
+								            					<div class="param-description"><p>Benutzer-Objekt</p>
+								            </div>
+								            
+								            				</li>
+								            				<li class="param">
+								            						<code class="param-name">params</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+								            
+								            
+								            					<div class="param-description"><p>Anzahl der Knuddel</p>
+								            </div>
+								            
+								            				</li>
+								            			</ul>
 								            		</div>
+								            
 								            
 								            </div>
 								        </div>

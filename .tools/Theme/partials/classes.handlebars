@@ -5,7 +5,7 @@
     {{#if uses}}
 	<div class="well well-small">
         <div class="uses">
-            Uses
+            VErwendet
             <ul class="inline commas">
                 {{#uses}}
                     <li><a href="{{.}}.html">{{.}}</a></li>
@@ -18,7 +18,7 @@
     {{#if extends}}
 	<div class="well well-small">
         <div class="extends">
-            Extends {{#crossLink extends}}{{/crossLink}}
+            Erweitert {{#crossLink extends}}{{/crossLink}}
         </div>
     </div>
     {{/if}}
@@ -26,25 +26,25 @@
     {{#if module}}
 	<div class="well well-small">
         {{#if submodule}}
-            Module: {{#crossLinkModule submodule}}{{/crossLinkModule}}<br>
-            Parent Module: {{#crossLinkModule module}}{{/crossLinkModule}}
+            Modul: {{#crossLinkModule submodule}}{{/crossLinkModule}}<br>
+            Eltern-Modul: {{#crossLinkModule module}}{{/crossLinkModule}}
         {{else}}
-            Module: {{#crossLinkModule module}}{{/crossLinkModule}}
+            Modul: {{#crossLinkModule module}}{{/crossLinkModule}}
         {{/if}}
     </div>
     {{/if}}
 
     {{#if since}}
-        <p>Available since {{since}}</p>
+        <p>Verfügbar seit {{since}}</p>
     {{/if}}
 
 {{#if deprecated}}
     <div class="well well-small">
         <p>
         {{#if deprecationMessage}}
-            <strong>Deprecated:</strong> {{deprecationMessage}}
+            <strong>VERALTET:</strong> {{deprecationMessage}}
         {{else}}
-            This class is deprecated.
+            Diese Klasse ist veraltet.
         {{/if}}
         </p>
     </div>
@@ -59,11 +59,10 @@
 <!-- table of contents -->
 
 <div id="class-toc" class="page-section">
-	<h2>Table of Contents</h2>
     <ul>
 		{{#hasInstanceMethods methods}}
 		<li>
-			<strong>Methods</strong>
+			<strong>Methoden</strong>
 			<ul>
 				{{#methods}}
 				{{#if static}}
@@ -88,7 +87,7 @@
 
 		{{#if attrs}}
 		<li>
-			<strong>Attributes</strong>
+			<strong>Attribute</strong>
 			<ul>
 				{{#attrs}}
 				<li><a href="#attr-{{name}}"><span class="iattr">{{name}}</span></a></li>
@@ -99,7 +98,7 @@
 
 		{{#hasStaticMethods methods}}
 		<li>
-			<strong>Static Methods</strong>
+			<strong>Statische Methoden</strong>
 			<ul>
 				{{#methods}}
 				{{#if static}}
@@ -116,7 +115,7 @@
 
 {{#is_constructor}}
     <div class="constructor yuidoc-class-constructor page-section">
-        <h2>Constructor</h2>
+        <h2>Konstruktor</h2>
         <div class="item-list">
         {{>method}}
         </div>
@@ -125,7 +124,7 @@
 
 {{#hasInstanceMethods methods}}
     <div id="methods" class="page-section">
-        <h2 class="off-left">Methods</h2>
+        <h2 class="off-left">Methoden</h2>
         <div class="item-list">
        		{{#methods}}
         	{{#if static}}
@@ -139,7 +138,7 @@
 
 {{#if properties}}
     <div id="properties" class="page-section">
-        <h2 class="off-left">Properties</h2>
+        <h2 class="off-left">Eigenschaften</h2>
 
         <div class="item-list">
         {{#properties}}
@@ -151,7 +150,7 @@
 
 {{#if attrs}}
     <div id="attrs" class="page-section">
-        <h2 class="off-left">Attributes</h2>
+        <h2 class="off-left">Attribute</h2>
 
         {{#attrs}}
             {{>attrs}}
@@ -161,7 +160,7 @@
 
 {{#if events}}
     <div id="events" class="page-section">
-        <h2 class="off-left">Events</h2>
+        <h2 class="off-left">Ereignisse</h2>
 
         <div class="item-list">
         {{#events}}
@@ -173,7 +172,7 @@
 
 {{#hasStaticMethods methods}}
     <div id="static-methods" class="page-section">
-        <h2 class="off-left">Static Methods</h2>
+        <h2 class="off-left">Statische Methoden</h2>
         <div class="item-list">
         {{#methods}}
 			{{#if static}}
