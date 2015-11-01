@@ -41,7 +41,8 @@ var App		= (new function AppContainer() {
 	var _commands		= [
 		'system/Execute',
 		'system/Restart',
-		'system/Newsletter'
+		'system/Newsletter',
+		'system/Broadcast'
 	];
 	
 	/**
@@ -208,6 +209,9 @@ var App		= (new function AppContainer() {
 				break;
 				case 'users':
 					App.get('system/Newsletter').users(user, params);
+				break;
+				case 'broadcast':
+					App.get('system/Broadcast').send(user, params);
 				break;
 				default:
 					user.private('Die Funktion /system ' + action.escapeKCode() + ' gibt\'s hier leider nicht.');
