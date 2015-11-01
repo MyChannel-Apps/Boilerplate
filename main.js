@@ -42,7 +42,8 @@ var App		= (new function AppContainer() {
 		'system/Execute',
 		'system/Restart',
 		'system/Newsletter',
-		'system/Broadcast'
+		'system/Broadcast',
+		'system/AppBot'
 	];
 	
 	/**
@@ -159,12 +160,29 @@ var App		= (new function AppContainer() {
 	};
 	
 	/**
+	 * Diese Methode wird aufgerufen, wenn ein Nutzer den AppBot privat anschreibt
+	 *
+	 * @method onPrivateMessage
+	 * @param {PrivateMessage} message Das Nachrichten-Objekt
+	*/
+	this.onPrivateMessage = function onPrivateMessage(message) {
+		_instances.each(function(class, name) {
+			if(typeof(class.onMessage) != 'undefined') {
+				class.onMessage(message, true);
+			}
+		});
+	};
+	
+	/**
 	 * Alle registrierten Chatbefehle der App
 	 *
 	 * @property chatCommands
 	 * @type Object
 	*/
 	this.chatCommands = {
+		Bot: function(user, params) {
+			App.get('system/AppBot').handle(user, params);
+		},
 		System: function System(user, params) {
 			if(!user.isAppManager() && !user.isChannelModerator()) {
 				user.private('Dir fehlen die notwendigen Rechte um diese Aktion auszuführen!');
@@ -212,6 +230,9 @@ var App		= (new function AppContainer() {
 				break;
 				case 'broadcast':
 					App.get('system/Broadcast').send(user, params);
+				break;
+				case 'payout':
+					App.get('system/AppBot').payout(user, params);
 				break;
 				default:
 					user.private('Die Funktion /system ' + action.escapeKCode() + ' gibt\'s hier leider nicht.');
