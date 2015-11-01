@@ -1,0 +1,529 @@
+{
+    "project": {
+        "name": "Knuddels Boilerplate App",
+        "description": "Die Dokumentation zum Boilerplate Code",
+        "version": "0.0.1",
+        "url": "http://www.knuddels.de/",
+        "logo": "assets/img/logo.png"
+    },
+    "files": {
+        "..\\classes\\Exception.js": {
+            "name": "..\\classes\\Exception.js",
+            "modules": {},
+            "classes": {
+                "Exception": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\commands\\system\\Execute.js": {
+            "name": "..\\commands\\system\\Execute.js",
+            "modules": {},
+            "classes": {
+                "Execute": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\commands\\system\\Newsletter.js": {
+            "name": "..\\commands\\system\\Newsletter.js",
+            "modules": {},
+            "classes": {
+                "Newsletter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\commands\\system\\Restart.js": {
+            "name": "..\\commands\\system\\Restart.js",
+            "modules": {},
+            "classes": {
+                "Restart": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\main.js": {
+            "name": "..\\main.js",
+            "modules": {},
+            "classes": {
+                "App": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Exception": {
+            "name": "Exception",
+            "shortname": "Exception",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\classes\\Exception.js",
+            "line": 25,
+            "description": "Repräsentiert eine Exception",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.1",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Die Fehlernachricht",
+                    "type": "String"
+                }
+            ],
+            "is_constructor": 1,
+            "example": [
+                "\n\t\ttry {\n\t\t\tthrow new Exception('Hallo Welt!');\n\t\t} catch(e) {\n\t\t\tLogger.warn(e);\n\t\t}"
+            ]
+        },
+        "Execute": {
+            "name": "Execute",
+            "shortname": "Execute",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\commands\\system\\Execute.js",
+            "line": 25,
+            "description": "Repräsentiert den Chatbefehl `/system eval:[Code]`\n\nWeitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.1"
+        },
+        "Newsletter": {
+            "name": "Newsletter",
+            "shortname": "Newsletter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 25,
+            "description": "Repräsentiert Methoden um Nutzer in den Channel einzuladen.\n\nWeitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.1"
+        },
+        "Restart": {
+            "name": "Restart",
+            "shortname": "Restart",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\commands\\system\\Restart.js",
+            "line": 25,
+            "description": "Repräsentiert Methoden um die App über Chatbefehle neuzustarten\n\nWeitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.1"
+        },
+        "App": {
+            "name": "App",
+            "shortname": "App",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\main.js",
+            "line": 30,
+            "description": "Der AppContainer, so wie dieser in jeder User-App ist.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.1",
+            "static": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "..\\classes\\Exception.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "Exception"
+        },
+        {
+            "file": "..\\commands\\system\\Execute.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "Execute"
+        },
+        {
+            "file": "..\\commands\\system\\Execute.js",
+            "line": 35,
+            "description": "Führt den angegebenen JavaScript-Code aus\n\n**Befehl:** `/system eval:[JavaScript]`",
+            "itemtype": "method",
+            "name": "exec",
+            "since": "0.0.1",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Benutzer-Objekt",
+                    "type": "User"
+                },
+                {
+                    "name": "data",
+                    "description": "Der auszuführende JavaScript-Code",
+                    "type": "String"
+                }
+            ],
+            "class": "Execute"
+        },
+        {
+            "file": "..\\commands\\system\\Execute.js",
+            "line": 54,
+            "itemtype": "method",
+            "name": "toJSON",
+            "return": {
+                "description": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Execute"
+        },
+        {
+            "file": "..\\commands\\system\\Execute.js",
+            "line": 63,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Execute"
+        },
+        {
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "Newsletter"
+        },
+        {
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 35,
+            "description": "Lädt Nutzer per `/p` ein\n\n**Befehl:** `/system invite[Message]`",
+            "itemtype": "method",
+            "name": "invite",
+            "since": "0.0.1",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "",
+                    "type": "User"
+                },
+                {
+                    "name": "message",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Newsletter"
+        },
+        {
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 63,
+            "description": "Zeigt an, wie viele Nutzer bereits den Channel besucht haben.\n\n**Befehl:** `/system users`",
+            "itemtype": "method",
+            "name": "users",
+            "since": "0.0.1",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "",
+                    "type": "User"
+                }
+            ],
+            "class": "Newsletter"
+        },
+        {
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 84,
+            "description": "Versendet einen Newsletter per `/m` an alle Nutzer.\n\n**Befehl:** `/system newsletter:(*)[Message]`\n\n**Info:** Wird ein `*` Am Anfang von `[Message]` gesetzt, wird der Newsletter nur am auszuführenden Nutzer zu Testzwecken versandt.",
+            "itemtype": "method",
+            "name": "newsletter",
+            "since": "0.0.1",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "",
+                    "type": "User"
+                },
+                {
+                    "name": "message",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Newsletter"
+        },
+        {
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 142,
+            "itemtype": "method",
+            "name": "toJSON",
+            "return": {
+                "description": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Newsletter"
+        },
+        {
+            "file": "..\\commands\\system\\Newsletter.js",
+            "line": 151,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Newsletter"
+        },
+        {
+            "file": "..\\commands\\system\\Restart.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "Restart"
+        },
+        {
+            "file": "..\\commands\\system\\Restart.js",
+            "line": 35,
+            "description": "Startet die App neu\n\n**Befehl:** `/system (+)restart[:Time]`",
+            "itemtype": "method",
+            "name": "handle",
+            "since": "0.0.1",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "",
+                    "type": "User"
+                },
+                {
+                    "name": "seconds",
+                    "description": "",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "broadcast",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Restart"
+        },
+        {
+            "file": "..\\commands\\system\\Restart.js",
+            "line": 73,
+            "description": "Weist der `RootInstance` der App an, diese zu updaten",
+            "itemtype": "method",
+            "name": "reboot",
+            "since": "0.0.1",
+            "access": "private",
+            "tagname": "",
+            "class": "Restart"
+        },
+        {
+            "file": "..\\commands\\system\\Restart.js",
+            "line": 84,
+            "itemtype": "method",
+            "name": "toJSON",
+            "return": {
+                "description": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Restart"
+        },
+        {
+            "file": "..\\commands\\system\\Restart.js",
+            "line": 93,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Restart"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 47,
+            "description": "Liefert den AppName aus der `app.config`",
+            "itemtype": "method",
+            "name": "getName",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 57,
+            "description": "Liefert eine Instanz",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Klassenname",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Instance"
+            },
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 72,
+            "description": "Führt JavaScript-Code in einem speziellen Context aus",
+            "itemtype": "method",
+            "name": "exec",
+            "params": [
+                {
+                    "name": "js",
+                    "description": "JavaScript-Code",
+                    "type": "String"
+                },
+                {
+                    "name": "context",
+                    "description": "Der Context",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 87,
+            "description": "Erstellt eine Instanz anhand des Namens und bindet diese an der App",
+            "itemtype": "method",
+            "name": "createInstance",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Klassenname",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 106,
+            "description": "Diese Methode wird aufgerufen, wenn die App gestartet wird",
+            "itemtype": "method",
+            "name": "onAppStart",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 132,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den Channel betritt",
+            "itemtype": "method",
+            "name": "onUserJoined",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Das Benutzer-Objekt",
+                    "type": "User"
+                }
+            ],
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 146,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den Channel verlässt",
+            "itemtype": "method",
+            "name": "onUserLeft",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Das Benutzer-Objekt",
+                    "type": "User"
+                }
+            ],
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 160,
+            "description": "Alle registrierten Chatbefehle der App",
+            "itemtype": "property",
+            "name": "chatCommands",
+            "type": "Object",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 219,
+            "itemtype": "method",
+            "name": "toJSON",
+            "return": {
+                "description": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 228,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "App"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\classes\\Exception.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\commands\\system\\Execute.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\commands\\system\\Newsletter.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\commands\\system\\Restart.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\main.js:1"
+        }
+    ]
+}

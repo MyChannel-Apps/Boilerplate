@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>App - Knuddels Boilerplate App</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Knuddels Boilerplate App" src="..\assets\img\logo.png" style="max-height: 65%;" title="Knuddels Boilerplate App">
+            Knuddels Boilerplate App
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.0.1</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/App", "classes/Exception", "classes/Execute", "classes/Newsletter", "classes/Restart"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <div id="sidebar">
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/App.html">App</a></li>
+	                    <li><a href="../classes/Exception.html">Exception</a></li>
+	                    <li><a href="../classes/Execute.html">Execute</a></li>
+	                    <li><a href="../classes/Newsletter.html">Newsletter</a></li>
+	                    <li><a href="../classes/Restart.html">Restart</a></li>
+	            </ul>
+	        </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>App</h1>
+                        </div>
+                        
+                        
+                        
+                        
+                                <p>Available since 0.0.1</p>
+                        
+                        
+                        <div class="yuidoc-class-description">
+                        <p>Der AppContainer, so wie dieser in jeder User-App ist.</p>
+                        
+                        </div>
+                        
+                        <!-- table of contents -->
+                        
+                        <div id="class-toc" class="page-section">
+                        	<h2>Table of Contents</h2>
+                            <ul>
+                        		<li>
+                        			<strong>Methods</strong>
+                        			<ul>
+                        				<li><a href="#method-createInstance"><span class="im">createInstance</span>(<span class="ia">name</span>)</a></li>
+                        				<li><a href="#method-exec"><span class="im">exec</span>(<span class="ia">js</span><span class="ia">context</span>)</a></li>
+                        				<li><a href="#method-get"><span class="im">get</span>(<span class="ia">name</span>)</a></li>
+                        				<li><a href="#method-getName"><span class="im">getName</span>()</a></li>
+                        				<li><a href="#method-onAppStart"><span class="im">onAppStart</span>()</a></li>
+                        				<li><a href="#method-onUserJoined"><span class="im">onUserJoined</span>(<span class="ia">user</span>)</a></li>
+                        				<li><a href="#method-onUserLeft"><span class="im">onUserLeft</span>(<span class="ia">user</span>)</a></li>
+                        				<li><a href="#method-toJSON"><span class="im">toJSON</span>()</a></li>
+                        				<li><a href="#method-toString"><span class="im">toString</span>()</a></li>
+                        			</ul>
+                        		</li>
+                        
+                        		<li>
+                        			<strong>Properties</strong>
+                        			<ul>
+                        				<li><a href="#prop-chatCommands"><span class="ip">chatCommands</span></a></li>
+                        			</ul>
+                        		</li>
+                        
+                        
+                        	</ul>
+                        </div>
+                        
+                        <!-- details -->
+                        
+                        
+                            <div id="methods" class="page-section">
+                                <h2 class="off-left">Methods</h2>
+                                <div class="item-list">
+                                    <div id="method-createInstance" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>createInstance</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>name</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Erstellt eine Instanz anhand des Namens und bindet diese an der App</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">name</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Klassenname</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-exec" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>exec</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>js</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>context</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Führt JavaScript-Code in einem speziellen Context aus</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">js</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>JavaScript-Code</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">context</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Der Context</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-get" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>get</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>name</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Instance</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Liefert eine Instanz</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">name</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Klassenname</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Instance</span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-getName" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>getName</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Liefert den AppName aus der <code>app.config</code></p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-onAppStart" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>onAppStart</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Diese Methode wird aufgerufen, wenn die App gestartet wird</p>
+                                    </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="method-onUserJoined" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>onUserJoined</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>user</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den Channel betritt</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">user</code>
+                                    						<span class="type">User</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Das Benutzer-Objekt</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-onUserLeft" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>onUserLeft</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>user</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den Channel verlässt</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">user</code>
+                                    						<span class="type">User</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Das Benutzer-Objekt</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-toJSON" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>toJSON</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type"></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    					<p>Object</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-toString" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>toString</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type"></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    					<p>String</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div id="properties" class="page-section">
+                                <h2 class="off-left">Properties</h2>
+                        
+                                <div class="item-list">
+                                    <div id="prop-chatCommands" class="property item">
+                                        <h3 class="name"><code>chatCommands</code></h3>
+                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Alle registrierten Chatbefehle der App</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

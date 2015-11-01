@@ -1,2 +1,0 @@
-# Boilerplate
-Boilerplate App

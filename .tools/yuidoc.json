@@ -1,0 +1,14 @@
+{
+    "name":			"Knuddels Boilerplate App",
+	"description":	"Die Dokumentation zum Boilerplate Code",
+	"version":		"0.0.1",
+	"url":			"http://www.knuddels.de/",
+	"logo":			"assets/img/logo.png",
+	"options":		{
+        "outdir":			"../docs",
+		"linkNatives":		true,
+		"attributesEmit":	true,
+		"extension":		".js",
+		"exclude":			".tools,libs,KFramework.min.js,bootstrap.min.js"
+	}
+}
