@@ -80,7 +80,7 @@ function Broadcast() {
 		user.private('Broadcast an _' + users.size() + ' Nutzer_ versandt.');
 		
 		users.each(function(user, id) {
-			user.post(subject, params.formater({
+			user.post(subject, message.formater({
 				NICKNAME:	user.getProfileLink()
 			}));
 		});
