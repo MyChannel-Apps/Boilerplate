@@ -2,7 +2,7 @@
 <html lang="de">
 	<head>
 		<meta charset="UTF-8" />
-		<title>App - Knuddels Boilerplate App</title>
+		<title>SampleClass - Knuddels Boilerplate App</title>
 		<link rel="stylesheet" href="" />
 		<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css" />
 		<link rel="stylesheet" href="../assets/css/main.css" id="site_styles" />
@@ -81,17 +81,18 @@
 						<div id="docs-main">
 							<div class="content">
 								<div class="page-header">
-								    <h1>App</h1>
+								    <h1>SampleClass</h1>
 								</div>
 								
 								
 								
 								
-								        <p>Verfügbar seit 0.0.1</p>
+								        <p>Verfügbar seit 0.0.4</p>
 								
 								
 								<div class="yuidoc-class-description">
-								<p>Der AppContainer, so wie dieser in jeder User-App ist.</p>
+								<p>Dies ist eine <strong>Beispielklasse</strong>, die für <code>/commands/</code> genutzt werden kann.</p>
+								<p>In der Klasse existieren alle Methoden, die in der App aufgerufen werden können. Nicht jede Methode ist Pflicht: Wird diese nicht benötigt, kann diese entfernt werden.</p>
 								
 								</div>
 								
@@ -102,29 +103,19 @@
 										<li>
 											<strong>Methoden</strong>
 											<ul>
-												<li><a href="#method-createInstance"><span class="im">createInstance</span>(<span class="ia">name</span>)</a></li>
-												<li><a href="#method-exec"><span class="im">exec</span>(<span class="ia">js</span><span class="ia">context</span>)</a></li>
-												<li><a href="#method-get"><span class="im">get</span>(<span class="ia">name</span>)</a></li>
-												<li><a href="#method-getName"><span class="im">getName</span>()</a></li>
-												<li><a href="#method-mayShowPublicMessage"><span class="im">mayShowPublicMessage</span>(<span class="ia">message</span>)</a></li>
-												<li><a href="#method-onAppStart"><span class="im">onAppStart</span>()</a></li>
-												<li><a href="#method-onPrepareShutdown"><span class="im">onPrepareShutdown</span>(<span class="ia">seconds</span><span class="ia">reason</span>)</a></li>
-												<li><a href="#method-onPrivateMessage"><span class="im">onPrivateMessage</span>(<span class="ia">message</span>)</a></li>
-												<li><a href="#method-onShutdown"><span class="im">onShutdown</span>()</a></li>
-												<li><a href="#method-onUserDiced"><span class="im">onUserDiced</span>(<span class="ia">event</span>)</a></li>
-												<li><a href="#method-onUserJoined"><span class="im">onUserJoined</span>(<span class="ia">user</span>)</a></li>
-												<li><a href="#method-onUserLeft"><span class="im">onUserLeft</span>(<span class="ia">user</span>)</a></li>
+												<li><a href="#method-onDice"><span class="im">onDice</span>(<span class="ia">event</span>)</a></li>
+												<li><a href="#method-onJoin"><span class="im">onJoin</span>(<span class="ia">user</span>)</a></li>
+												<li><a href="#method-onLeave"><span class="im">onLeave</span>(<span class="ia">user</span>)</a></li>
+												<li><a href="#method-onMessage"><span class="im">onMessage</span>(<span class="ia">message</span><span class="ia">private</span>)</a></li>
+												<li><a href="#method-onShutdown"><span class="im">onShutdown</span>(<span class="ia">seconds</span><span class="ia">reason</span>)</a></li>
+												<li><a href="#method-onStart"><span class="im">onStart</span>()</a></li>
+												<li><a href="#method-onStop"><span class="im">onStop</span>()</a></li>
+												<li><a href="#method-showMessage"><span class="im">showMessage</span>(<span class="ia">message</span>)</a></li>
 												<li><a href="#method-toJSON"><span class="im">toJSON</span>()</a></li>
 												<li><a href="#method-toString"><span class="im">toString</span>()</a></li>
 											</ul>
 										</li>
 								
-										<li>
-											<strong>Properties</strong>
-											<ul>
-												<li><a href="#prop-chatCommands"><span class="ip">chatCommands</span></a></li>
-											</ul>
-										</li>
 								
 								
 									</ul>
@@ -136,21 +127,20 @@
 								    <div id="methods" class="page-section">
 								        <h2 class="off-left">Methoden</h2>
 								        <div class="item-list">
-								            <div id="method-createInstance" class="method item private">
+								            <div id="method-onDice" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>createInstance</code></span>
+								            	<span class="name"><code>onDice</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
 								            				<li class="arg">
-								            						<code>name</code>
+								            						<code>event</code>
 								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
 								            	</div>
 								            
 								            
-								            		<span class="flag private">private</span>
 								            
 								            
 								            
@@ -163,7 +153,7 @@
 								            
 								            	</div>
 								            
-								            	<div class="description"><p>Erstellt eine Instanz anhand des Namens und bindet diese an der App</p>
+								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer würfelt</p>
 								            </div>
 								            
 								            		<div class="params">
@@ -171,11 +161,11 @@
 								            
 								            			<ul class="params-list">
 								            				<li class="param">
-								            						<code class="param-name">name</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+								            						<code class="param-name">event</code>
+								            						<span class="type">DiceEvent</span>
 								            
 								            
-								            					<div class="param-description"><p>Klassenname</p>
+								            					<div class="param-description"><p>Das Würfel-Objekt</p>
 								            </div>
 								            
 								            				</li>
@@ -184,27 +174,20 @@
 								            
 								            
 								            </div>
-								            <div id="method-exec" class="method item private">
+								            <div id="method-onJoin" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>exec</code></span>
+								            	<span class="name"><code>onJoin</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
 								            				<li class="arg">
-								            						<code>js</code>
-								            				</li>
-								            				<li class="arg">
-								            						<code>context</code>
+								            						<code>user</code>
 								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
-								            		<span class="returns-inline">
-								            			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-								            		</span>
 								            	</div>
 								            
 								            
-								            		<span class="flag private">private</span>
 								            
 								            
 								            
@@ -217,7 +200,7 @@
 								            
 								            	</div>
 								            
-								            	<div class="description"><p>Führt JavaScript-Code in einem speziellen Context aus</p>
+								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den Channel betritt</p>
 								            </div>
 								            
 								            		<div class="params">
@@ -225,49 +208,30 @@
 								            
 								            			<ul class="params-list">
 								            				<li class="param">
-								            						<code class="param-name">js</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+								            						<code class="param-name">user</code>
+								            						<span class="type">User</span>
 								            
 								            
-								            					<div class="param-description"><p>JavaScript-Code</p>
-								            </div>
-								            
-								            				</li>
-								            				<li class="param">
-								            						<code class="param-name">context</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-								            
-								            
-								            					<div class="param-description"><p>Der Context</p>
+								            					<div class="param-description"><p>Das Benutzer-Objekt</p>
 								            </div>
 								            
 								            				</li>
 								            			</ul>
 								            		</div>
 								            
-								            		<div class="returns">
-								            			<h4>Returns:</h4>
-								            
-								            			<div class="returns-description">
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-								            			</div>
-								            		</div>
 								            
 								            </div>
-								            <div id="method-get" class="method item">
+								            <div id="method-onLeave" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>get</code></span>
+								            	<span class="name"><code>onLeave</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
 								            				<li class="arg">
-								            						<code>name</code>
+								            						<code>user</code>
 								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
-								            		<span class="returns-inline">
-								            			<span class="type">Instance</span>
-								            		</span>
 								            	</div>
 								            
 								            
@@ -283,7 +247,7 @@
 								            
 								            	</div>
 								            
-								            	<div class="description"><p>Liefert eine Instanz</p>
+								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den Channel verlässt</p>
 								            </div>
 								            
 								            		<div class="params">
@@ -291,71 +255,31 @@
 								            
 								            			<ul class="params-list">
 								            				<li class="param">
-								            						<code class="param-name">name</code>
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+								            						<code class="param-name">user</code>
+								            						<span class="type">User</span>
 								            
 								            
-								            					<div class="param-description"><p>Klassenname</p>
+								            					<div class="param-description"><p>Das Benutzer-Objekt</p>
 								            </div>
 								            
 								            				</li>
 								            			</ul>
 								            		</div>
 								            
-								            		<div class="returns">
-								            			<h4>Returns:</h4>
-								            
-								            			<div class="returns-description">
-								            						<span class="type">Instance</span>
-								            			</div>
-								            		</div>
 								            
 								            </div>
-								            <div id="method-getName" class="method item">
+								            <div id="method-onMessage" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>getName</code></span>
-								            
-								            		<span class="paren">()</span>
-								            		<span class="returns-inline">
-								            			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-								            		</span>
-								            	</div>
-								            
-								            
-								            
-								            
-								            
-								            
-								            	<div class="meta">
-								            				<p>
-								            		</p>
-								            
-								            
-								            
-								            	</div>
-								            
-								            	<div class="description"><p>Liefert den AppName aus der <code>app.config</code></p>
-								            </div>
-								            
-								            
-								            		<div class="returns">
-								            			<h4>Returns:</h4>
-								            
-								            			<div class="returns-description">
-								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-								            			</div>
-								            		</div>
-								            
-								            </div>
-								            <div id="method-mayShowPublicMessage" class="method item">
-								            	<div class="method-signature">
-								            	<span class="name"><code>mayShowPublicMessage</code></span>
+								            	<span class="name"><code>onMessage</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
 								            				<li class="arg">
 								            						<code>message</code>
 								            				</li>
+								            				<li class="arg">
+								            						<code>private</code>
+								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
 								            	</div>
@@ -373,7 +297,7 @@
 								            
 								            	</div>
 								            
-								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich schreibt. Diese Methode kann genutzt werden um Nachrichten zu unterbinden.</p>
+								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich oder den AppBot privat anschreibt</p>
 								            </div>
 								            
 								            		<div class="params">
@@ -389,40 +313,23 @@
 								            </div>
 								            
 								            				</li>
+								            				<li class="param">
+								            						<code class="param-name">private</code>
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+								            
+								            
+								            					<div class="param-description"><p>Handelt es sich hier um eine private oder öffentliche Nachricht?</p>
+								            </div>
+								            
+								            				</li>
 								            			</ul>
 								            		</div>
 								            
 								            
 								            </div>
-								            <div id="method-onAppStart" class="method item">
+								            <div id="method-onShutdown" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>onAppStart</code></span>
-								            
-								            		<span class="paren">()</span>
-								            	</div>
-								            
-								            
-								            
-								            
-								            
-								            
-								            	<div class="meta">
-								            				<p>
-								            		</p>
-								            
-								            
-								            
-								            	</div>
-								            
-								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn die App gestartet wird</p>
-								            </div>
-								            
-								            
-								            
-								            </div>
-								            <div id="method-onPrepareShutdown" class="method item">
-								            	<div class="method-signature">
-								            	<span class="name"><code>onPrepareShutdown</code></span>
+								            	<span class="name"><code>onShutdown</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
@@ -479,17 +386,11 @@
 								            
 								            
 								            </div>
-								            <div id="method-onPrivateMessage" class="method item">
+								            <div id="method-onStart" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>onPrivateMessage</code></span>
+								            	<span class="name"><code>onStart</code></span>
 								            
-								            		<div class="args">
-								            			<span class="paren">(</span><ul class="args-list inline commas">
-								            				<li class="arg">
-								            						<code>message</code>
-								            				</li>
-								            			</ul><span class="paren">)</span>
-								            		</div>
+								            		<span class="paren">()</span>
 								            	</div>
 								            
 								            
@@ -505,30 +406,15 @@
 								            
 								            	</div>
 								            
-								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den AppBot privat anschreibt</p>
+								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn die App gestartet wird</p>
 								            </div>
 								            
-								            		<div class="params">
-								            			<h4>Parameters:</h4>
-								            
-								            			<ul class="params-list">
-								            				<li class="param">
-								            						<code class="param-name">message</code>
-								            						<span class="type">PrivateMessage</span>
-								            
-								            
-								            					<div class="param-description"><p>Das Nachrichten-Objekt</p>
-								            </div>
-								            
-								            				</li>
-								            			</ul>
-								            		</div>
 								            
 								            
 								            </div>
-								            <div id="method-onShutdown" class="method item">
+								            <div id="method-onStop" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>onShutdown</code></span>
+								            	<span class="name"><code>onStop</code></span>
 								            
 								            		<span class="paren">()</span>
 								            	</div>
@@ -552,17 +438,20 @@
 								            
 								            
 								            </div>
-								            <div id="method-onUserDiced" class="method item">
+								            <div id="method-showMessage" class="method item">
 								            	<div class="method-signature">
-								            	<span class="name"><code>onUserDiced</code></span>
+								            	<span class="name"><code>showMessage</code></span>
 								            
 								            		<div class="args">
 								            			<span class="paren">(</span><ul class="args-list inline commas">
 								            				<li class="arg">
-								            						<code>event</code>
+								            						<code>message</code>
 								            				</li>
 								            			</ul><span class="paren">)</span>
 								            		</div>
+								            		<span class="returns-inline">
+								            			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+								            		</span>
 								            	</div>
 								            
 								            
@@ -578,7 +467,7 @@
 								            
 								            	</div>
 								            
-								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer würfelt</p>
+								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich schreibt. Diese Methode kann genutzt werden um Nachrichten zu unterbinden.</p>
 								            </div>
 								            
 								            		<div class="params">
@@ -586,111 +475,26 @@
 								            
 								            			<ul class="params-list">
 								            				<li class="param">
-								            						<code class="param-name">event</code>
-								            						<span class="type">DiceEvent</span>
+								            						<code class="param-name">message</code>
+								            						<span class="type">Message</span>
 								            
 								            
-								            					<div class="param-description"><p>Das Würfel-Objekt</p>
+								            					<div class="param-description"><p>Das Nachrichten-Objekt</p>
 								            </div>
 								            
 								            				</li>
 								            			</ul>
 								            		</div>
 								            
+								            		<div class="returns">
+								            			<h4>Returns:</h4>
 								            
-								            </div>
-								            <div id="method-onUserJoined" class="method item">
-								            	<div class="method-signature">
-								            	<span class="name"><code>onUserJoined</code></span>
+								            			<div class="returns-description">
+								            						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+								            					<p>Darf die Nachricht angezeigt werden?</p>
 								            
-								            		<div class="args">
-								            			<span class="paren">(</span><ul class="args-list inline commas">
-								            				<li class="arg">
-								            						<code>user</code>
-								            				</li>
-								            			</ul><span class="paren">)</span>
+								            			</div>
 								            		</div>
-								            	</div>
-								            
-								            
-								            
-								            
-								            
-								            
-								            	<div class="meta">
-								            				<p>
-								            		</p>
-								            
-								            
-								            
-								            	</div>
-								            
-								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den Channel betritt</p>
-								            </div>
-								            
-								            		<div class="params">
-								            			<h4>Parameters:</h4>
-								            
-								            			<ul class="params-list">
-								            				<li class="param">
-								            						<code class="param-name">user</code>
-								            						<span class="type">User</span>
-								            
-								            
-								            					<div class="param-description"><p>Das Benutzer-Objekt</p>
-								            </div>
-								            
-								            				</li>
-								            			</ul>
-								            		</div>
-								            
-								            
-								            </div>
-								            <div id="method-onUserLeft" class="method item">
-								            	<div class="method-signature">
-								            	<span class="name"><code>onUserLeft</code></span>
-								            
-								            		<div class="args">
-								            			<span class="paren">(</span><ul class="args-list inline commas">
-								            				<li class="arg">
-								            						<code>user</code>
-								            				</li>
-								            			</ul><span class="paren">)</span>
-								            		</div>
-								            	</div>
-								            
-								            
-								            
-								            
-								            
-								            
-								            	<div class="meta">
-								            				<p>
-								            		</p>
-								            
-								            
-								            
-								            	</div>
-								            
-								            	<div class="description"><p>Diese Methode wird aufgerufen, wenn ein Nutzer den Channel verlässt</p>
-								            </div>
-								            
-								            		<div class="params">
-								            			<h4>Parameters:</h4>
-								            
-								            			<ul class="params-list">
-								            				<li class="param">
-								            						<code class="param-name">user</code>
-								            						<span class="type">User</span>
-								            
-								            
-								            					<div class="param-description"><p>Das Benutzer-Objekt</p>
-								            </div>
-								            
-								            				</li>
-								            			</ul>
-								            		</div>
-								            
 								            
 								            </div>
 								            <div id="method-toJSON" class="method item private">
@@ -768,35 +572,6 @@
 								        </div>
 								    </div>
 								
-								    <div id="properties" class="page-section">
-								        <h2 class="off-left">Eigenschaften</h2>
-								
-								        <div class="item-list">
-								            <div id="prop-chatCommands" class="property item">
-								                <h3 class="name"><code>chatCommands</code></h3>
-								                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-								            
-								            
-								            
-								            
-								            
-								                <div class="meta">
-								                            <p>
-								                    </p>
-								            
-								            
-								                </div>
-								            
-								                <div class="description">
-								                    <p>Alle registrierten Chatbefehle der App</p>
-								            
-								                </div>
-								            
-								            
-								            
-								            </div>
-								        </div>
-								    </div>
 								
 								
 								

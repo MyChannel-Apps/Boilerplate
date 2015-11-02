@@ -7,7 +7,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "Exception",
         "Execute",
         "Newsletter",
-        "Restart"
+        "Restart",
+        "SampleClass"
     ],
     "modules": [],
     "allModules": [],

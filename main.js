@@ -174,6 +174,73 @@ var App		= (new function AppContainer() {
 	};
 	
 	/**
+	 * Diese Methode wird aufgerufen, wenn ein Nutzer würfelt
+	 *
+	 * @method onUserDiced
+	 * @param {DiceEvent} event Das Würfel-Objekt
+	*/
+	this.onUserDiced = function onUserDiced(event) {
+		_instances.each(function(class, name) {
+			if(typeof(class.onDice) != 'undefined') {
+				class.onDice(event);
+			}
+		});
+	};
+	
+	/**
+	 * Diese Methode wird aufgerufen, wenn die App Beendet wurde
+	 *
+	 * @method onShutdown
+	*/
+	this.onShutdown = function onShutdown() {
+		_instances.each(function(class, name) {
+			if(typeof(class.onStop) != 'undefined') {
+				class.onStop();
+			}
+		});
+	};
+	
+	/**
+	 * Diese Methode wird aufgerufen, wenn die App Beendet wird
+	 *
+	 * @method onPrepareShutdown
+	 * @param {Number} seconds Sekunden bis die App gestoppt wird
+	 * @param {Property} reason Der Grund, warum die App heruntergefahren wird
+	*/
+	this.onPrepareShutdown = function onPrepareShutdown(seconds, reason) {
+		_instances.each(function(class, name) {
+			if(typeof(class.onShutdown) != 'undefined') {
+				class.onShutdown(seconds, reason);
+			}
+		});
+	};
+	
+	/**
+	 * Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich schreibt. Diese Methode kann genutzt werden um Nachrichten zu unterbinden.
+	 *
+	 * @method mayShowPublicMessage
+	 * @param {Message} message Das Nachrichten-Objekt
+	*/
+	this.mayShowPublicMessage = function mayShowPublicMessage(message) {
+		var show = true;
+		
+		_instances.each(function(class, name) {
+			if(typeof(class.showMessage) != 'undefined') {
+				if(!class.showMessage(message)) {
+					show = false;
+					return false;
+				}
+			}
+		});
+		
+		if(!show) {
+			return false;
+		}
+		
+		return message;
+	};
+	
+	/**
 	 * Alle registrierten Chatbefehle der App
 	 *
 	 * @property chatCommands

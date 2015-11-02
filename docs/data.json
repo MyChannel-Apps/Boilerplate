@@ -61,6 +61,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "..\\SampleClass.js": {
+            "name": "..\\SampleClass.js",
+            "modules": {},
+            "classes": {
+                "SampleClass": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "..\\main.js": {
             "name": "..\\main.js",
             "modules": {},
@@ -167,6 +176,20 @@
             "description": "Repräsentiert Methoden um die App über Chatbefehle neuzustarten\n\nWeitere Informationen und Befehle können aus den einzelnen Methoden entnommen werden.",
             "author": "Adrian Preuß, Bizarrus",
             "since": "0.0.1"
+        },
+        "SampleClass": {
+            "name": "SampleClass",
+            "shortname": "SampleClass",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\SampleClass.js",
+            "line": 25,
+            "description": "Dies ist eine **Beispielklasse**, die für `/commands/` genutzt werden kann.\n\nIn der Klasse existieren alle Methoden, die in der App aufgerufen werden können. Nicht jede Methode ist Pflicht: Wird diese nicht benötigt, kann diese entfernt werden.",
+            "author": "Adrian Preuß, Bizarrus",
+            "since": "0.0.4"
         },
         "App": {
             "name": "App",
@@ -541,6 +564,156 @@
             "class": "Restart"
         },
         {
+            "file": "..\\SampleClass.js",
+            "line": 1,
+            "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 35,
+            "description": "Diese Methode wird aufgerufen, wenn die App gestartet wird",
+            "itemtype": "method",
+            "name": "onStart",
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 44,
+            "description": "Diese Methode wird aufgerufen, wenn die App Beendet wurde",
+            "itemtype": "method",
+            "name": "onStop",
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 53,
+            "description": "Diese Methode wird aufgerufen, wenn die App Beendet wird",
+            "itemtype": "method",
+            "name": "onShutdown",
+            "params": [
+                {
+                    "name": "seconds",
+                    "description": "Sekunden bis die App gestoppt wird",
+                    "type": "Number"
+                },
+                {
+                    "name": "reason",
+                    "description": "Der Grund, warum die App heruntergefahren wird",
+                    "type": "Property"
+                }
+            ],
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 64,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den Channel betritt",
+            "itemtype": "method",
+            "name": "onJoin",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Das Benutzer-Objekt",
+                    "type": "User"
+                }
+            ],
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 74,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer den Channel verlässt",
+            "itemtype": "method",
+            "name": "onLeave",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "Das Benutzer-Objekt",
+                    "type": "User"
+                }
+            ],
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 84,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich oder den AppBot privat anschreibt",
+            "itemtype": "method",
+            "name": "onMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Das Nachrichten-Objekt",
+                    "type": "Message"
+                },
+                {
+                    "name": "private",
+                    "description": "Handelt es sich hier um eine private oder öffentliche Nachricht?",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 100,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich schreibt. Diese Methode kann genutzt werden um Nachrichten zu unterbinden.",
+            "itemtype": "method",
+            "name": "showMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Das Nachrichten-Objekt",
+                    "type": "Message"
+                }
+            ],
+            "return": {
+                "description": "Darf die Nachricht angezeigt werden?",
+                "type": "Boolean"
+            },
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 112,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer würfelt",
+            "itemtype": "method",
+            "name": "onDice",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Das Würfel-Objekt",
+                    "type": "DiceEvent"
+                }
+            ],
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 122,
+            "itemtype": "method",
+            "name": "toJSON",
+            "return": {
+                "description": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "SampleClass"
+        },
+        {
+            "file": "..\\SampleClass.js",
+            "line": 131,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "SampleClass"
+        },
+        {
             "file": "..\\main.js",
             "line": 1,
             "description": "The MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
@@ -676,6 +849,64 @@
         {
             "file": "..\\main.js",
             "line": 176,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer würfelt",
+            "itemtype": "method",
+            "name": "onUserDiced",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Das Würfel-Objekt",
+                    "type": "DiceEvent"
+                }
+            ],
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 190,
+            "description": "Diese Methode wird aufgerufen, wenn die App Beendet wurde",
+            "itemtype": "method",
+            "name": "onShutdown",
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 203,
+            "description": "Diese Methode wird aufgerufen, wenn die App Beendet wird",
+            "itemtype": "method",
+            "name": "onPrepareShutdown",
+            "params": [
+                {
+                    "name": "seconds",
+                    "description": "Sekunden bis die App gestoppt wird",
+                    "type": "Number"
+                },
+                {
+                    "name": "reason",
+                    "description": "Der Grund, warum die App heruntergefahren wird",
+                    "type": "Property"
+                }
+            ],
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 218,
+            "description": "Diese Methode wird aufgerufen, wenn ein Nutzer öffentlich schreibt. Diese Methode kann genutzt werden um Nachrichten zu unterbinden.",
+            "itemtype": "method",
+            "name": "mayShowPublicMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Das Nachrichten-Objekt",
+                    "type": "Message"
+                }
+            ],
+            "class": "App"
+        },
+        {
+            "file": "..\\main.js",
+            "line": 243,
             "description": "Alle registrierten Chatbefehle der App",
             "itemtype": "property",
             "name": "chatCommands",
@@ -684,7 +915,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 244,
+            "line": 311,
             "itemtype": "method",
             "name": "toJSON",
             "return": {
@@ -696,7 +927,7 @@
         },
         {
             "file": "..\\main.js",
-            "line": 253,
+            "line": 320,
             "itemtype": "method",
             "name": "toString",
             "return": {
@@ -731,6 +962,10 @@
         {
             "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
             "line": " ..\\commands\\system\\Restart.js:1"
+        },
+        {
+            "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+            "line": " ..\\SampleClass.js:1"
         },
         {
             "message": "Missing item type\nThe MIT License (MIT)\n\nCopyright (c) 2014 MyChannel-Apps.de\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
