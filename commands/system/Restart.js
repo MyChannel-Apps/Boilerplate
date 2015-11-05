@@ -32,6 +32,8 @@
  * @since 0.0.1
 */
 function Restart() {
+	var _instance = this;
+	
 	/**
 	 * Startet die App neu
 	 * 
@@ -44,7 +46,7 @@ function Restart() {
 	 * @param {boolean} broadcast
 	*/
 	this.handle = function(user, seconds, broadcast) {
-		seconds		= (typeof(seconds) == 'undefined' ? 0 : parseInt(seconds));
+		seconds		= (typeof(seconds) == 'undefined' ? 0 : parseInt(seconds, 10));
 		broadcast	= (typeof(broadcast) == 'undefined' ? false : broadcast);
 		
 		if(isNaN(seconds)) {
@@ -61,7 +63,7 @@ function Restart() {
 		}
 		
 		if(seconds <= 0) {
-			App.get('system/Restart').reboot();
+			_instance.reboot();
 			return;
 		}
 		

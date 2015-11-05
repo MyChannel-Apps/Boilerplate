@@ -51,7 +51,7 @@ function AppBot() {
 	 * @param {String} params Weitere Befehlsinformationen
 	*/
 	this.handle = function handle(user, params) {
-		if(!user.isAppDeveloper() || !user.isAppManager()) {
+		if(!user.isAppDeveloper() && !user.isAppManager() && !user.isChannelModerator()) {
 			user.private('Dir fehlen die notwendigen Rechte um diese Aktion auszuführen!');
 			return;
 		}
@@ -175,7 +175,7 @@ function AppBot() {
 	 * @private
 	*/
 	this.payout = function payout(user, params) {
-		if(!user.isChannelOwner() && !user.isAppDeveloper()) {
+		if(!user.isChannelOwner() && !user.isAppDeveloper() && !user.isAppManager()) {
 			user.private('Dir fehlen die notwendigen Rechte um diese Aktion auszuführen!');
 			return;
 		}
