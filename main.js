@@ -281,10 +281,24 @@ var App		= (new function AppContainer() {
 					App.get('system/Execute').exec(user, params);
 				break;
 				case 'restart':
-					App.get('system/Restart').handle(user, params);
+					var all_instances = true;
+					
+					if(params.substr(0, 1) == '*') {
+						all_instances	= false;
+						params			= params.substr(1);
+					}
+					
+					App.get('system/Restart').handle(user, params, false, all_instances);
 				break;
 				case '+restart':
-					App.get('system/Restart').handle(user, params, true);
+					var all_instances = true;
+					
+					if(params.substr(0, 1) == '*') {
+						all_instances	= false;
+						params			= params.substr(1);
+					}
+					
+					App.get('system/Restart').handle(user, params, true, all_instances);
 				break;
 				case 'invite':
 					App.get('system/Newsletter').invite(user, params);

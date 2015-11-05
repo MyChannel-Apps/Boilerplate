@@ -45,9 +45,10 @@ function Restart() {
 	 * @param {boolean} seconds
 	 * @param {boolean} broadcast
 	*/
-	this.handle = function(user, seconds, broadcast) {
-		seconds		= (typeof(seconds) == 'undefined' ? 0 : parseInt(seconds, 10));
-		broadcast	= (typeof(broadcast) == 'undefined' ? false : broadcast);
+	this.handle = function(user, seconds, broadcast, all_instances) {
+		seconds			= (typeof(seconds) == 'undefined' ? 0 : parseInt(seconds, 10));
+		broadcast		= (typeof(broadcast) == 'undefined' ? false : broadcast);
+		all_instances	= (typeof(all_instances) == 'undefined' ? false : all_instances);
 		
 		if(isNaN(seconds)) {
 			seconds = 0;
@@ -63,12 +64,12 @@ function Restart() {
 		}
 		
 		if(seconds <= 0) {
-			_instance.reboot();
+			_instance.reboot(user, all_instances);
 			return;
 		}
 		
 		setTimeout(function() {
-			KnuddelsServer.getAppInfo().updateApp();
+			_instance.reboot(user, all_instances);
 		}, seconds * 1000);
 	};
 	
@@ -79,8 +80,39 @@ function Restart() {
 	 * @since 0.0.1
 	 * @private
 	*/
-	this.reboot = function() {
-		KnuddelsServer.getAppAccess().getOwnInstance().getRootInstance().updateApp();		
+	this.reboot = function(user, all_instances) {
+		var _instances	= [];
+		var _instance	= KnuddelsServer.getAppAccess().getOwnInstance();
+		
+		if(all_instances) {
+			_instance.getAllInstances(false).each(function(instance) {
+				_instances.push(instance);
+			});
+		}
+		
+		_instances.push(_instance);
+		
+		var text = new KCode();
+		
+		text.append('Folgende Instanzen (' + (all_instances ? 'Alle' : 'Diese') + ') werden neugestartet:');
+		
+		_instances.each(function(instance, index) {
+			var info	= instance.getAppInfo();
+			var channel	= DB.load(info.getAppUid(), 'Unbekannt');
+			
+			text.newLine();
+			text.append('_°BB°');
+			text.append(new KLink(channel, '/go ' + channel));
+			text.append('_°rD° [ID: ');
+			text.append(new KLink(info.getAppUid() + '', '/wc ' + channel));
+			text.append(', ');
+			text.append(info.getAppVersion());
+			text.append(']°r°');
+			
+			info.updateApp();
+		});
+		
+		user.private(text);
 	};
 	
 	/**
